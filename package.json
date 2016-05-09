@@ -1,0 +1,27 @@
+{
+  "name": "coleslaw-models",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinmchase/coleslaw-models.git"
+  },
+  "author": "Justin Chase <justin.m.chase@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinmchase/coleslaw-models/issues"
+  },
+  "homepage": "https://github.com/justinmchase/coleslaw-models#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4"
+  },
+  "dependencies": {
+    "coleslaw": "0.0.2"
+  }
+}
