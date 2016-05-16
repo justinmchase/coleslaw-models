@@ -20,16 +20,20 @@ describe('coleslaw', () => {
         it(path.basename(p, '.cls'), (done) => {
             coleslaw.compile(p, (err, code) => {
                 if (err) return done(err)
-                var options = {
+                var context = {
                     dataAccess: {
                         create: sinon.stub(),
                         retrieve: sinon.stub(),
                         update: sinon.stub(),
                         delete: sinon.stub()
-                    }
+                    },
+                    definitions: []
                 }
-                eval(code)
-                done()
+                try {
+                    eval(code)
+                } catch (err) {
+                    done(err)
+                }
             })
         })
     }

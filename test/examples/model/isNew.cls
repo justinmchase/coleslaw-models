@@ -1,7 +1,11 @@
 model Example {
 }
 
-var T = build(Example)
-var I = new T()
+context.definitions.push(Example)
 
-I.isNew.should.be.true
+build(context, function (err) {
+    if (err) return done(err);
+    var I = new context.models.Example()
+    I.isNew.should.be.true
+    done()
+})

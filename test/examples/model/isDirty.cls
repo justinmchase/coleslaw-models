@@ -2,7 +2,12 @@ model Example {
     field value: string
 }
 
-var T = build(Example, options)
-var I = new T({ value: 'test' })
-I.set('value', 'success')
-I.isDirty.should.be.true
+context.definitions.push(Example)
+
+build(context, function (err) {
+    if (err) return done(err);
+    var I = new context.models.Example({ value: 'original' })
+    I.set('value', 'changed')
+    I.isDirty.should.be.true
+    done()
+})

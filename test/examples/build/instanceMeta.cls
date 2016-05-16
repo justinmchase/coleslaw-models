@@ -2,9 +2,14 @@ model Example {
 
 }
 
-var T = build(Example)
+var context = { definitions: [Example] }
 
-new T()
-    .meta
-    .should
-    .equal(Example)
+build(context, function (err) {
+    if (err) return done(err);
+    new context.models.Example()
+        .meta
+        .should
+        .equal(Example)
+    
+    done()
+})
